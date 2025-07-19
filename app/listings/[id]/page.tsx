@@ -66,7 +66,7 @@ const properties = {
       "/images/calistatownhouse/received_918006243330409.jpeg",
       "/images/calistatownhouse/received_958850679049624.jpeg",
     ],
-    videos: ["/images/calistatownhouse/calista_vid1.mp4", "/images/calistatownhouse/calista_vid2.mp4"],
+    videos: ["https://avnh3avi0jy6ldcr.public.blob.vercel-storage.com/calista_vid1.mp4", "https://avnh3avi0jy6ldcr.public.blob.vercel-storage.com/calista_vid2.mp4"],
     agent: {
       name: "Sarah Johnson",
       phone: "0915-614-0046",
@@ -106,7 +106,7 @@ const properties = {
       "/images/unnasingle/unna2.jpeg",
       "/images/unnasingle/unna3.jpeg",
     ],
-    videos: ["/images/unnasingle/unna_vid1.mov", "/images/unnasingle/unna_vid2.mp4", "/images/unnasingle/unna_vid3.MOV"],
+    videos: ["https://avnh3avi0jy6ldcr.public.blob.vercel-storage.com/unna_vid1-EB9ENBD5hIjFeGfqsgP8nmUaVsleRb.mov", "https://avnh3avi0jy6ldcr.public.blob.vercel-storage.com/unna_vid2-I6dJET9bUiH0jcFtnXldubA4T5QOLc.mp4", "https://avnh3avi0jy6ldcr.public.blob.vercel-storage.com/unna_vid3-OGR7b8fdeKK7AiJQmbiRtjfEoQQr6S.mp4"],
     agent: {
       name: "Sarah Johnson",
       phone: "0915-614-0046",

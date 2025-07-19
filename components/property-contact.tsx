@@ -30,15 +30,12 @@ export function PropertyContact({ agent }: PropertyContactProps) {
       <CardContent className="space-y-4">
         <div className="flex items-center gap-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage
-              src={agent.image || "/placeholder.svg"}
-              alt={agent.name}
-            />
+            <AvatarImage src={agent.image || "/placeholder.svg"} alt={agent.name} />
             <AvatarFallback>{agent.name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div>
             <h3 className="font-medium">{agent.name}</h3>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-col gap-1 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Phone className="h-3 w-3" />
                 <span>{agent.phone}</span>
@@ -53,7 +50,9 @@ export function PropertyContact({ agent }: PropertyContactProps) {
 
         <form
           className="space-y-4"
-          action={async (formData) => {
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
             const { data, error } = await sendEmail(formData);
 
             if (error) {
@@ -69,11 +68,13 @@ export function PropertyContact({ agent }: PropertyContactProps) {
               title: "Success",
               description: "Your message has been sent successfully.",
             });
+
+            e.currentTarget.reset();
           }}
         >
           <div className="grid gap-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Enter your name" />
+            <Input id="name" name="name" placeholder="Enter your name" />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
@@ -86,7 +87,7 @@ export function PropertyContact({ agent }: PropertyContactProps) {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="phone">Phone</Label>
-            <Input id="phone" type="tel" placeholder="Enter your phone number" />
+            <Input id="phone" name="phone" type="tel" placeholder="Enter your phone number" />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="message">Message</Label>
@@ -101,7 +102,6 @@ export function PropertyContact({ agent }: PropertyContactProps) {
             Send Message
           </Button>
         </form>
-
       </CardContent>
     </Card>
   );
