@@ -51,10 +51,10 @@ export function PropertyVideos({ videos }: PropertyVideosProps) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md p-0 sm:max-w-lg">
           <div className="relative">
-            <Button variant="ghost" size="icon" className="absolute right-2 top-2 z-10" onClick={() => setOpen(false)}>
+            {/* <Button variant="ghost" size="icon" className="absolute right-2 top-2 z-10" onClick={() => setOpen(false)}>
               <X className="h-4 w-4" />
               <span className="sr-only">Close</span>
-            </Button>
+            </Button> */}
 
             <div className="aspect-[9/16] w-full">
               <video
