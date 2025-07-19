@@ -19,10 +19,10 @@ export function HeroSection() {
         {/* Full width image container */}
         <div className="absolute inset-0 w-full">
           <Image
-            src="/images/cover1.jpg"
+            src="/images/hero_enhanced.jpg"
             alt="PHIRST Park Homes"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             priority
           />
         </div>

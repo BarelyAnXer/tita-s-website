@@ -34,7 +34,7 @@ export default function AboutPage() {
           <div className="flex items-center justify-center">
             <div className="relative aspect-square w-full max-w-[400px] overflow-hidden rounded-xl">
               <Image
-                src="/images/cover2.jpg"
+                src="/images/profile.png"
                 alt="About Me"
                 fill
                 className="object-cover object-center"
@@ -45,17 +45,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container px-4 md:px-6">
+      <section className="container px-4 md:px-6 ">
         <Card>
-          <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center">
+          <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center bg-sky-100 border-2 rounded-3xl border-blue-800">
             <Avatar className="h-24 w-24">
-              <AvatarImage src="/images/cover2.jpg" alt="Agent" />
+              <AvatarImage src="/images/profile.png" alt="Agent" />
               <AvatarFallback>A</AvatarFallback>
             </Avatar>
             <div className="space-y-4">
               <div>
-                <h2 className="text-xl font-bold">Sarah Johnson</h2>
-                <p className="text-muted-foreground">Licensed Real Estate Agent</p>
+                <h2 className="text-xl font-bold">Criselyn P. Zaragoza</h2>
+                <p className="text-muted-foreground">Sales Executive</p>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
@@ -64,11 +64,11 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-muted-foreground" />
-                  <span>sarah@premierproperties.com</span>
+                  <span>crizarag@yahoo.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-muted-foreground" />
-                  <span>PHIRST Park Homes</span>
+                  <span>Brgy. Biclatan, General Trias, Cavite</span>
                 </div>
               </div>
             </div>
