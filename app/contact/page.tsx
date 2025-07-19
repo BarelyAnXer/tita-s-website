@@ -116,9 +116,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Office Address</h3>
-                    <p className="text-muted-foreground">
-                      123 Real Estate Blvd, Suite 100, Beverly Hills, CA 90210
-                    </p>
+                    <p className="text-muted-foreground">Brgy. Biclatan, General Trias, Cavite</p>
                   </div>
                 </div>
               </CardContent>
@@ -131,7 +129,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">(310) 555-1234</p>
+                    <p className="text-muted-foreground">+63 9156140046</p>
                   </div>
                 </div>
               </CardContent>
@@ -144,9 +142,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">
-                      info@premierproperties.com
-                    </p>
+                    <p className="text-muted-foreground">crizarag@yahoo.com</p>
                   </div>
                 </div>
               </CardContent>

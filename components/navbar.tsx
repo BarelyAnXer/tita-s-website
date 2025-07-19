@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold">Premier Properties</span>
+          <span className="text-xl font-bold">Phirst Cavite Properties</span>
         </Link>
         {/* Then update the navigation rendering to filter out developer-only routes */}
         {/* In the desktop navigation: */}
@@ -61,7 +61,7 @@ export default function Navbar() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <div className="flex flex-col gap-6 pt-6">
               <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-                <span className="text-xl font-bold">Premier Properties</span>
+                <span className="text-xl font-bold">Phirst Cavite Properties</span>
               </Link>
               {/* And in the mobile navigation: */}
               <nav className="flex flex-col gap-4">
