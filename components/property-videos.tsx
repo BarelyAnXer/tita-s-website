@@ -29,12 +29,13 @@ export function PropertyVideos({ videos }: PropertyVideosProps) {
           <Card key={index} className="overflow-hidden">
             <CardContent className="p-0">
               <div className="relative cursor-pointer" onClick={() => handleVideoClick(video)}>
-                <img
-                  src={video || "/placeholder.svg"}
-                  alt={`Property video ${index + 1}`}
+                <video
+                  src={video}
                   className="aspect-[9/16] w-full object-cover"
                   width={200}
                   height={350}
+                  muted
+                  preload="metadata"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90">
@@ -56,17 +57,13 @@ export function PropertyVideos({ videos }: PropertyVideosProps) {
             </Button>
 
             <div className="aspect-[9/16] w-full">
-              {/* In a real implementation, this would be a video player */}
-              <img
-                src={currentVideo || "/placeholder.svg"}
-                alt="Property video"
+              <video
+                src={currentVideo}
                 className="h-full w-full object-cover"
+                controls
+                autoPlay
+                muted
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
-                  <Play className="h-8 w-8 text-primary" />
-                </div>
-              </div>
             </div>
           </div>
         </DialogContent>

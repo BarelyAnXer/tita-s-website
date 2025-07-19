@@ -16,7 +16,7 @@ const featuredListings = [
     bathrooms: 2,
     sqft: 48,
     image: "/images/cover1.jpg",
-    featured: true,
+    featured: false,
     description:
       "Standalone house with no attached neighbors except for one shared firewall. Lot area: 70 sq.m, Floor area: 48 sq.m, with 1 carport.",
   },
@@ -41,7 +41,7 @@ const featuredListings = [
     bathrooms: 2,
     sqft: 65,
     image: "/images/dua-model.png",
-    featured: true,
+    featured: false,
     description: "Discover the independence you've been dreaming of with this standalone house.",
   },
 ]

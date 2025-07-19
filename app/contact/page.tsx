@@ -1,19 +1,33 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { sendEmail } from "@/lib/send-email";
+import { useToast } from "@/hooks/use-toast";
 
 export default function ContactPage() {
+  const { toast } = useToast();
+
   return (
     <div className="flex flex-col gap-8 py-12">
       <section className="container px-4 md:px-6">
         <div className="flex flex-col gap-4 text-center">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Contact Us</h1>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Contact Us
+          </h1>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-lg">
-            We're here to help you with all your real estate needs. Reach out to us with any questions or to schedule a
-            viewing.
+            We're here to help you with all your real estate needs. Reach out to
+            us with any questions or to schedule a viewing.
           </p>
         </div>
       </section>
@@ -23,29 +37,68 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle>Send Us a Message</CardTitle>
-              <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>
+                Fill out the form below and we'll get back to you as soon as
+                possible.
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="grid gap-4">
+              <form
+                className="grid gap-4"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const { data, error } = await sendEmail(formData);
+
+                  if (error) {
+                    toast({
+                      title: "Error",
+                      description: error,
+                      variant: "destructive",
+                    });
+                    return;
+                  }
+
+                  toast({
+                    title: "Success",
+                    description: "Your message has been sent successfully.",
+                  });
+                }}
+              >
                 <div className="grid gap-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Enter your name" />
+                  <Input id="name" name="name" placeholder="Enter your name" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter your email" />
+                  <Input
+                    id="email"
+                    name="senderEmail"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="Enter your phone number" />
+                  <Input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                  />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="What is this regarding?" />
+                  <Input id="subject" name="subject" placeholder="What is this regarding?" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Enter your message" className="min-h-[120px]" />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Enter your message"
+                    className="min-h-[120px]"
+                  />
                 </div>
                 <Button type="submit" className="w-full">
                   Send Message
@@ -63,7 +116,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Office Address</h3>
-                    <p className="text-muted-foreground">123 Real Estate Blvd, Suite 100, Beverly Hills, CA 90210</p>
+                    <p className="text-muted-foreground">
+                      123 Real Estate Blvd, Suite 100, Beverly Hills, CA 90210
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -89,7 +144,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">info@premierproperties.com</p>
+                    <p className="text-muted-foreground">
+                      info@premierproperties.com
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -104,5 +161,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
